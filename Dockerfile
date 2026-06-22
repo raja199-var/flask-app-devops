@@ -1,24 +1,17 @@
-# Base image (OS)
+# Bring pateela (base image)
+FROM python:3.14
 
-FROM python:3.14-slim
+WORKDIR app/
 
-# Working directory
-
-WORKDIR /app
-
-# Copy src code to container
-
+# Add Doodh, paani, chaipatti (Application Code)
 COPY . .
 
-# Run the build commands
-
+# Add cheeni, elaichi, adrack (Installing dependencies)
 RUN pip install -r requirements.txt
 
-# expose port 80
-
+# chai kaha pe milegi (which port will this app run on)
 EXPOSE 80
 
-# serve the app / run the app (keep it running)
-
-CMD ["python","run.py"]
+# Gas on (Run the code)
+CMD ["python","run.py"] 
 
